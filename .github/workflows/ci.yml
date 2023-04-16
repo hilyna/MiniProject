@@ -25,5 +25,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Test API III new branch
+      - name: Test API II new branch
         run: mvn clean verify
