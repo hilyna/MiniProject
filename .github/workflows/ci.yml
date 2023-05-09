@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Mini Project API Category
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,11 +19,3 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-  test:
-    name: Test API REST ASSURED NEW BRANCH
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test API II new branch
-        run: mvn clean verify
