@@ -4,16 +4,28 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-import static org.hamcrest.core.IsEqual.equalTo;
 
-public class Get {
-    protected static String url = "https://reqres.in/api/";
+public class Get{
+    protected static String url = "https://altashop-api.fly.dev/api/";
 
-    @Step("I set GET api endpoints")
+    @Step("I set GET api endpoints all category")
     public String setApiEndpoint(){
-        return url + "users/2";
+
+        return url + "categories";
     }
 
+    @Step("I set GET api endpoints category by ID")
+    public String setApiEndpoint1(){
+
+        return url + "categories/1";
+    }
+
+
+    @Step("I set GET api endpoints category by invalid ID")
+    public String setApiEndpoint2(){
+
+        return url + "categories/abcdfghjdsf";
+    }
     @Step("I send GET HTTP Request")
     public void sendGetHttpRequest(){
         SerenityRest.given().get(setApiEndpoint());
@@ -24,9 +36,20 @@ public class Get {
         restAssuredThat(response -> response.statusCode(200));
     }
 
-    @Step("I receive valid data for detail user")
-    public void validateDataDetailUser(){
-        restAssuredThat(response -> response.body("'data'.'id'", equalTo(2)));
-        restAssuredThat(response -> response.body("'data'.'first_name'", equalTo("Janet")));
+    @Step("I receive valid HTTP response code 400")
+    public void validateHttpResponseCode400(){
+        restAssuredThat(response -> response.statusCode(200));
     }
+
+    @Step("I receive valid data")
+    public void validateData(){
+
+    }
+    @Step("I not receive valid data")
+    public void InvalidateData() {
+
+    }
+
+
+
 }

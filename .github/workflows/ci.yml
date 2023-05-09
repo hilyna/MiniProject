@@ -1,4 +1,4 @@
-name: Rest API Automation Java + Maven CI/CD
+name: Mini Project API category
 
 on:
   push:
