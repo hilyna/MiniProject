@@ -1,4 +1,4 @@
-name: API category (ci/cd)
+name: CI/CD API Category
 
 on:
   push:
