@@ -1,4 +1,4 @@
-name: Mini Project API category
+name: API category (ci/cd)
 
 on:
   push:
